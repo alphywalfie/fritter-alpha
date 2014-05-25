@@ -1,0 +1,14 @@
+<div id="frit_form">
+	<%= form_for(@frit) do |f| %>
+	<p>Write a 
+		<%= f.text_field :limit, value: @limit, :readonly => true, :class => "read_only"%>
+	story about:<br/>
+		<%= f.text_area :prompt, value: @prompt, :readonly => true, :class => "read_only" %>
+	</p>
+	<% if !@message.nil? %>
+	<span id="message"><%= @message %></span>
+	<% end %>
+	<%= f.text_area :content, :cols => "70", :rows => "12", :class => "new_frit"%><br/>
+	<%= f.submit :class => "submit_button"%>
+</div>
+<% end %>
